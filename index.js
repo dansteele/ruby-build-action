@@ -26,6 +26,7 @@ async function run() {
     const rubyPath = await io.which('ruby', true)
     await exec.exec(`${rubyPath} --version`)
     core.setOutput('ruby-path', rubyPath);
+    await exec.exec(`rm -rf ./ruby-build`)
     core.endGroup()
   }
   catch (error) {
